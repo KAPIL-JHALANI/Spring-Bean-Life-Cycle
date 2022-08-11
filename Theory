@@ -1,0 +1,11 @@
+@Postconstruct --> method call after the bean creation + dependency injection completed
+
+@PreDestroy   --> method call just before bean or object is destroyed (If container is destroyed then first all it's beans are destroyed)
+
+In Standalone application we need to clost the context manually to run the @predestroy method.
+In web app we don't need to destro the cnotainer object. It automatically handles.
+
+BEAN LIFE CYCLE FLOW:
+
+Container started -> Bean Instantiated -> Dependency Injected ->  custom init method called (@postconstruct wala) -> Bean is ready to use ->
+Container Shutdown -> Custom destroy method called (@predestroy wala  and this one is called just before the deletion or destroy of bean or congtainer) -> Stop
